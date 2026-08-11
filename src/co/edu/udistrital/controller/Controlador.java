@@ -17,14 +17,14 @@ import co.edu.udistrital.model.Operacion;
 public class Controlador {
     
     
-    private Consola consola;
+    private Consola vista;
     private Operacion operador;
     
     public void menu_princripal(){
-        this.consola = new Consola();
-        int opcion=this.consola.mostrar_menu();
-        double a = this.consola.primer_numero();
-        double b=this.consola.segundo_numero();
+        this.vista = new Consola();
+        int opcion=this.vista.mostrar_menu();
+        double a = this.vista.primer_numero();
+        double b=this.vista.segundo_numero();
         switch (opcion) {
             case 1:
                 operador= new Suma();
@@ -40,7 +40,7 @@ public class Controlador {
                 break;
         }
         double resultado=this.operador.operar(a, b);
-        this.consola.mostrar_resultado(resultado);
+        this.vista.mostrar_resultado(resultado);
     }
 }
 
